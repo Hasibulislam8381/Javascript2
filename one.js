@@ -80,9 +80,9 @@ const todoJSON = JSON.stringify(todos);
 console.log(todoJSON);
 
 //for loop
-for(let i=0;i<=10;i++)
+for(let i=0;i<todos.length;i++)
 {
-    console.log(i);
+    console.log(todos[i].text);
 }
 // let sum=0;
 // for(let i=1;i<=5;i++)
@@ -99,5 +99,69 @@ while(i<=5)
     i++;
 }
 console.log(`The summation is : ${sum1}`);
+//for of [Used for arrays or itarable object]
+for(let x of todos)
+{
+    console.log(x.text);
+}
+//for in[used for object]
+for(let x in todos){
+    console.log(todos[x]);
+}
+//for each
+todos.forEach(function(todo){
+    console.log(todo);
+});
+
+//map
+const todoText = todos.map(function(x){
+    return x.text;
+})
+console.log(todoText);
+
+const hlw = new Map();
+hlw.set("Name","Himel");
+hlw.set("Banana",300);
+hlw.set("Oranges",500);
+
+console.log(hlw);
+
+const arr = [
+
+    {
+        id:01,
+        text:"My name is Himel",
+        inCompleted:true
+
+    },
+    {
+        id:02,
+        text:"I am from Hakimpur",
+        inCompleted:true
+
+    },
+    {
+        id:03,
+        text:"I love to teach",
+        inCompleted:false
+
+    },
+]
+// map filter reduce --> Higher order array method
+//Create a new array from a array
+const a = arr.map(function(y){
+    return y.id;
+
+})
+console.log(a);
+
+const a2 = arr.filter(function(check){
+    return check.inCompleted==true;
+}).map(function(mapping){
+    return mapping.text;
+})
+
+console.log(a2);
+
 
 
